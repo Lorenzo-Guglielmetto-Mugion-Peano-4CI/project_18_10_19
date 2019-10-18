@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project_18_10_19;
+package biblioteca;
 
-import bibblioteca.Book;
-import bibblioteca.Library;
+import biblioteca.Book;
+import biblioteca.Library;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -23,7 +24,7 @@ public class Main {
         Library libB = new Library("Library B");
         Library libC = new Library("Library C");
         
-        Book a1 = new Book("TPSI", "Francesco", "hoepli", "arh33", 12.9);
+        Book a1 = new Book(" ");
         Book a2 = new Book("sistemi", "Giovanni", "hoepli", "cdisuhi", 14.0);
         Book a3 = new Book("informatica", "Michele", "hoepli", "dsnjdsk", 11.3);
         Book a4 = new Book("italiano", "De CArlo", "hoepli", "sddj", 15.23);
@@ -62,14 +63,29 @@ public class Main {
         libC.addBook(c3);
         libC.addBook(c4);
         
+        String title = JOptionPane.showInputDialog("Inserisci il titolo del libro");
+        String writer = JOptionPane.showInputDialog("Inserisci il titolo del libro");
+        String editor = JOptionPane.showInputDialog("Inserisci il titolo del libro");
+        String isbn = JOptionPane.showInputDialog("Inserisci il titolo del libro");
+        Double price = Double.parseDouble(JOptionPane.showInputDialog("Inserisci il prezzo del libro"));
         
-        
-        
+        if (){
+            
+        }
+        else{
+        Book c5 = new Book();
+        c5.setTitle(title);
+        c5.setWriter(writer);
+        c5.setEditor(editor);
+        c5.setIsbn(isbn);
+        c5.setPrice(price);
+        libC.addBook(c5);
+        }
         
         //TO-DO: function: search for a book by title in All the Libraries
         //return Not Availabe or All the results ordered by price
         
-        String findIt = "TPSI";
+        String findIt = JOptionPane.showInputDialog("Inserisci il titolo del libro");
         Book foundIt = new Book();
         //Book temp = new Book();
         //temp.setTitle(" ");
