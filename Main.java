@@ -5,8 +5,6 @@
  */
 package biblioteca;
 
-import biblioteca.Book;
-import biblioteca.Library;
 import javax.swing.JOptionPane;
 
 /**
@@ -24,7 +22,7 @@ public class Main {
         Library libB = new Library("Library B");
         Library libC = new Library("Library C");
         
-        Book a1 = new Book(" ");
+        Book a1 = new Book("geografia", "Lorenzo", "hoepli", "arh33", 11.9);
         Book a2 = new Book("sistemi", "Giovanni", "hoepli", "cdisuhi", 14.0);
         Book a3 = new Book("informatica", "Michele", "hoepli", "dsnjdsk", 11.3);
         Book a4 = new Book("italiano", "De CArlo", "hoepli", "sddj", 15.23);
@@ -63,24 +61,7 @@ public class Main {
         libC.addBook(c3);
         libC.addBook(c4);
         
-        String title = JOptionPane.showInputDialog("Inserisci il titolo del libro");
-        String writer = JOptionPane.showInputDialog("Inserisci il titolo del libro");
-        String editor = JOptionPane.showInputDialog("Inserisci il titolo del libro");
-        String isbn = JOptionPane.showInputDialog("Inserisci il titolo del libro");
-        Double price = Double.parseDouble(JOptionPane.showInputDialog("Inserisci il prezzo del libro"));
-        
-        if (){
-            
-        }
-        else{
-        Book c5 = new Book();
-        c5.setTitle(title);
-        c5.setWriter(writer);
-        c5.setEditor(editor);
-        c5.setIsbn(isbn);
-        c5.setPrice(price);
-        libC.addBook(c5);
-        }
+
         
         //TO-DO: function: search for a book by title in All the Libraries
         //return Not Availabe or All the results ordered by price
@@ -92,38 +73,47 @@ public class Main {
         
         System.out.println(foundIt);
         
+        boolean ricerca = false;
+        
          for(Book temp : libA.getBooks().values()){
-               if(temp.getTitle().toString().compareTo(findIt) == 0) {
+               if(temp.getTitle().compareTo(findIt) == 0) {
                  foundIt.setTitle(temp.getTitle());
                  foundIt.setWriter(temp.getWriter());
                  foundIt.setEditor(temp.getEditor());
                  foundIt.setIsbn(temp.getIsbn());
                  foundIt.setPrice(temp.getPrice());
-            }     
-            
+                 System.out.println("libro trovato nella libreria A");
+                 ricerca = true;
+            }
+
          }
-         for(Book temp : libA.getBooks().values()){
-             if(temp.getTitle().toString().compareTo(findIt) == 0) {
+         for(Book temp : libB.getBooks().values()){
+             if(temp.getTitle().compareTo(findIt) == 0) {
                  foundIt.setTitle(temp.getTitle());
                  foundIt.setWriter(temp.getWriter());
                  foundIt.setEditor(temp.getEditor());
                  foundIt.setIsbn(temp.getIsbn());
                  foundIt.setPrice(temp.getPrice());
+                 System.out.println("libro trovato nella libreria B");
+                 ricerca = true;
             }        
             
          }
-          for(Book temp : libA.getBooks().values()){
-             if(temp.getTitle().toString().compareTo(findIt) == 0) {
+          for(Book temp : libC.getBooks().values()){
+             if(temp.getTitle().compareTo(findIt) == 0) {
                  foundIt.setTitle(temp.getTitle());
                  foundIt.setWriter(temp.getWriter());
                  foundIt.setEditor(temp.getEditor());
                  foundIt.setIsbn(temp.getIsbn());
                  foundIt.setPrice(temp.getPrice());
+                 System.out.println("libro trovato nella libreria C");
+                 ricerca = true;
             }        
             
          }
-          
-         System.out.println(foundIt.printIt());
+          if (ricerca == true){}
+          else
+              System.out.println("libro non trovato");
          
         
     }
